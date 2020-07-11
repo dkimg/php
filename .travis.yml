@@ -1,0 +1,18 @@
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - make build PHP=7.3
+        - make build PHP=7.4
+        - docker images
+        - docker tag dkimg/php:7.4 dkimg/php:latest
+        - docker push dkimg/php:7.3
+        - docker push dkimg/php:7.4
+        - docker push dkimg/php:latest
+    - stage: test
+      script:
+        - docker run --rm dkimg/php:7.3 php -v
+        - docker run --rm dkimg/php:7.4 php -v
