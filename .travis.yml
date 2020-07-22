@@ -2,7 +2,6 @@ language: shell
 dist: bionic
 services: docker
 
-
 jobs:
   include:
     - stage: "build"
