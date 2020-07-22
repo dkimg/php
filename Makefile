@@ -6,6 +6,8 @@ build:
 	@docker build -t dkimg/php:$(PHP) ./$(PHP)
 
 test:
+	@docker pull dkimg/php:$(PHP)
+	@docker pull quay.io/dkimg/php:$(PHP)
 	@docker run --rm dkimg/php:$(PHP) php -v
 	@docker run --rm quay.io/dkimg/php:$(PHP) php -v
 
