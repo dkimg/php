@@ -12,6 +12,7 @@ test:
 push:
 	@echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
 	@echo "$(QUAY_PASSWORD)" | docker login quay.io -u "$(QUAY_USERNAME)" --password-stdin
+	@docker tag dkimg/php:$(PHP) quay.io/dkimg/php:$(PHP)
 	@docker push dkimg/php:$(PHP)
 	@docker push quay.io/dkimg/php:$(PHP)
 
