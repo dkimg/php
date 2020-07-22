@@ -1,4 +1,4 @@
-.PHONY: build test deploy save
+.PHONY: build test push save
 
 PHP=7.4
 
@@ -8,8 +8,9 @@ build:
 test:
 	@docker run --rm dkimg/php:$(PHP) php -v
 
-deploy:
-	docker push dkimg/php:$(PHP)
+push:
+	@echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
+	@docker push dkimg/php:$(PHP)
 
 save:
 	@docker save dkimg/php:$(PHP) | gzip > dkimg_php$(PHP).tar.gz

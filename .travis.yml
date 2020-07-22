@@ -2,18 +2,22 @@ language: shell
 dist: bionic
 services: docker
 
-script:
-  - make build PHP=7.3
-  - make build PHP=7.4
 
-after_script:
-  - docker images
-  - make test PHP=7.3
-  - make test PHP=7.4
-
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker tag dkimg/php:7.4 dkimg/php:latest
-  - make deploy PHP=7.3
-  - make deploy PHP=7.4
-  - make deploy PHP=latest
+jobs:
+  include:
+    - stage: "build"
+      name: "php 7.3.x"
+      script:
+        - make build PHP=7.3
+        - make push PHP=7.3
+    - script:
+      - make build PHP=7.4
+      - docker tag dkimg/php:7.4 dkimg/php:latest
+      - make push PHP=7.4
+      - make push PHP=latest
+      name: "php 7.4.x"
+    - stage: "test"
+      name: "php 7.3.x"
+      script: make test PHP=7.3
+    - script: make test PHP=7.4
+      name: "php 7.4.x"
