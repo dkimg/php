@@ -35,7 +35,7 @@ RUN set -ex \
     && sed -i "/memory_limit = .*/c\memory_limit = 256M" ${PHP_INI_DIR}/php.ini \
     && sed -i "/upload_max_filesize = .*/c\upload_max_filesize = 100M" ${PHP_INI_DIR}/php.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && apk del --no-cache .build-deps
+    && apk del -q --no-cache .build-deps
 
 CMD ["php-fpm"]
 
