@@ -4,6 +4,14 @@
 
 PHP (stable) images with basic extensions based on [php-fpm-alpine](https://hub.docker.com/_/php)
 
+Testing releases
+
+| php | image/tag | size |
+|:-----:|:-----:|:-----:|
+| `8.0.0alpha3` | dkimg/php:8.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/8.0?label=image) |
+
+Stable releases
+
 | php | image/tag | size |
 |:-----:|:-----:|:-----:|
 | `7.4.8` | dkimg/php:7.4 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/7.4?label=image) |
