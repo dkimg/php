@@ -8,7 +8,7 @@ Testing releases
 
 | php | image/tag | size |
 |:-----:|:-----:|:-----:|
-| `8.0.0beta3` | dkimg/php:8.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/8.0?label=image) |
+| `8.0.0beta4` | dkimg/php:8.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/8.0?label=image) |
 
 Stable releases
 
