@@ -1,4 +1,4 @@
-FROM php:8.0.0rc1-alpine
+FROM php:8.0.0RC2-alpine
 
 RUN set -ex \
     && apk add -q --update --no-cache \
@@ -7,6 +7,7 @@ RUN set -ex \
         libxml2 \
         libpng \
         libjpeg-turbo \
+        icu \
     && apk add -q --no-cache --virtual \
         .build-deps \
         postgresql-dev \
@@ -28,6 +29,7 @@ RUN set -ex \
         pgsql \
         mysqli \
         mbstring \
+        intl \
         bcmath \
         > /dev/null \
     && cp ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini \
