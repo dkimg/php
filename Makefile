@@ -17,6 +17,7 @@ push:
 	@docker push quay.io/dkimg/php:$(PHP)
 
 latest:
+	@docker pull dkimg/php:$(PHP)
 	@docker tag dkimg/php:$(PHP) dkimg/php:latest
 	@docker tag dkimg/php:$(PHP) quay.io/dkimg/php:latest
 	@docker push dkimg/php:$(PHP)
