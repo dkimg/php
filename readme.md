@@ -9,7 +9,7 @@ Stable releases
 | php | image/tag | size |
 |:-----:|:-----:|:-----:|
 | `8.0.0` | dkimg/php | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/8.0?label=image) |
-| `8.0.0` | dkimg/php:7.4 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/8.0?label=image) |
+| `8.0.0` | dkimg/php:8.0 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/8.0?label=image) |
 | `7.4.13` | dkimg/php:7.4 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/7.4?label=image) |
 | `7.3.25` | dkimg/php:7.3 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/7.3?label=image) |
 | `7.2.34` | dkimg/php:7.2 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/dkimg/php/7.2?label=image) |
